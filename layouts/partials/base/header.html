@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg site-navbar {{ .Site.Params.navbarBgColorClass | default .Site.Data.Defaults.navbarBgColorClass }}">
+    <a class="navbar-brand text-white" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+  <button class="navbar-toggler" 
+  type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2"
+    aria-expanded="false" aria-label="Toggle navigation">
+    &#9776;
+  </button>
+  <div style="width: 70%; color: white; text-align: center;">
+    {{ if isset .Params "chapter" }}
+      <span>
+        {{ $chapter_data := index $.Site.Data.chapterdata .Params.chapter}}
+        {{ .Params.chapter }}. {{ $chapter_data.Name }}
+      </span>
+      -
+    {{ end }}
+    {{ if isset .Params "article" }}
+      <span>
+        {{ $ca := print .Params.chapter .Params.article }}
+        {{ $article_data := index $.Site.Data.articledata $ca }}
+        {{ .Params.article }}. {{ $article_data.Name }}
+      </span>
+      -
+    {{ end }}
+    {{ if isset .Params "division" }}
+      <span>
+        {{ $cad := print .Params.chapter .Params.article "-" .Params.division }}
+        {{ $division_data := index $.Site.Data.divisiondata $cad }}
+        {{ .Params.division }}. {{ $division_data.Name }}
+      </span>
+    {{ end }}
+  </div>
+  <div class="collapse navbar-collapse" id="exCollapsingNavbar2">
+    <ul class="nav navbar-nav ml-auto">
+      {{ $currentNode := . }} {{ range .Site.Menus.main }}
+      <li class="nav-item">
+        <a class="nav-link menu-item  no-decoration {{ $.Site.Params.navbarLinkFgColorClass | default $.Site.Data.Defaults.navbarLinkFgColorClass }}" href="{{.URL}}">
+          {{ .Pre }}
+          <span class="text-capitalize">{{ .Name }}</span>
+        </a>
+      </li>
+      {{end}}
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on AURA Code Commenting</title>
+    <link>https://ldc-commenting.firebaseapp.com/categories/</link>
+    <description>Recent content in Categories on AURA Code Commenting</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright (c) 2019, Kevin McLaughlin; all rights reserved.</copyright>
+    <lastBuildDate>Fri, 13 Sep 2019 14:37:17 +0000</lastBuildDate>
+    
+	<atom:link href="https://ldc-commenting.firebaseapp.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Unclear</title>
+      <link>https://ldc-commenting.firebaseapp.com/categories/unclear/</link>
+      <pubDate>Fri, 13 Sep 2019 14:37:17 +0000</pubDate>
+      
+      <guid>https://ldc-commenting.firebaseapp.com/categories/unclear/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Negative Feedback</title>
+      <link>https://ldc-commenting.firebaseapp.com/categories/negative-feedback/</link>
+      <pubDate>Fri, 13 Sep 2019 13:40:10 +0000</pubDate>
+      
+      <guid>https://ldc-commenting.firebaseapp.com/categories/negative-feedback/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Question</title>
+      <link>https://ldc-commenting.firebaseapp.com/categories/question/</link>
+      <pubDate>Fri, 13 Sep 2019 13:38:37 +0000</pubDate>
+      
+      <guid>https://ldc-commenting.firebaseapp.com/categories/question/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>syntax</title>
+      <link>https://ldc-commenting.firebaseapp.com/categories/syntax/</link>
+      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ldc-commenting.firebaseapp.com/categories/syntax/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>themes</title>
+      <link>https://ldc-commenting.firebaseapp.com/categories/themes/</link>
+      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ldc-commenting.firebaseapp.com/categories/themes/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
