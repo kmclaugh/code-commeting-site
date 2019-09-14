@@ -1,0 +1,11 @@
+{{ partial "head" . }}
+<div class="container">
+  <div class="row justify-content-center">
+    <!-- End Fixed Left Share -->
+      {{ .Render "single.hat" }}
+      {{ .Render "single.content" }}
+      </div>
+  <div class="row">{{ .Render "single.boot" }}</div>
+  
+</div>
+{{ partial "foot" . }}
