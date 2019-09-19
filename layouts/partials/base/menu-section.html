@@ -1,0 +1,66 @@
+{{ $firstItem := index . 0 }}
+{{ $currentPage := $firstItem.Params.page }}
+{{ $currentDivision := $firstItem.Params.division }}
+{{ $currentArticle:= $firstItem.Params.article }}
+{{ $currentChapter := $firstItem.Params.chapter }}
+<nav id="section-nav" class="navbar navbar-light bg-light" style="top: 70px; position: fixed;">
+    <a class="navbar-brand" href="#" style="width: 100%;">Sections</a>
+    <nav class="nav nav-pills flex-column">
+        <nav class="nav nav-pills flex-column">
+            <a class="nav-link" href="#c{{ $currentChapter }}">chapter-{{ $currentChapter }}</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ml-2" href="#c{{ $currentChapter }}-a{{ $currentArticle }}">article-{{ $currentArticle }}</a>
+                    <nav class="nav nav-pills flex-column">
+                        <a class="nav-link ml-3" href="#c{{ $currentChapter }}-a{{ $currentArticle }}-d{{ $currentDivision }}">division-{{ $currentDivision }}</a>
+                        <nav class="nav nav-pills flex-column">
+                            <a class="nav-link ml-4" href="#c{{ $currentChapter }}-a{{ $currentArticle }}-d{{ $currentDivision }}-p{{ $currentPage }}">page-{{ $currentPage }}</a>
+                            {{ range $index, $element := . }}
+
+                                {{/* Close section tags if necessary */}}
+                                {{ if ne $element.Params.page  $currentPage}}
+                                    </nav>
+                                {{ end }}
+                                {{ if ne $element.Params.division  $currentDivision}}
+                                    </nav>
+                                {{ end }}
+                                {{ if ne $element.Params.article  $currentArticle}}
+                                    </nav>
+                                {{ end }}
+                                {{ if ne $element.Params.chapter  $currentChapter}}
+                                    </nav>
+                                {{ end }}
+
+                                {{/* Create new sections and seperator */}}
+                                {{ $string := "" }}
+                                {{ if ne $element.Params.chapter  $currentChapter}}
+                                    {{ $currentChapter = .Params.chapter }}
+                                    {{ $string = (print "Chapter " $currentChapter " - "  ) }}
+                                    <nav class="nav nav-pills flex-column">
+                                        <a class="nav-link" href="#c{{ $currentChapter }}">chapter-{{ $currentChapter }}</a>
+                                {{ end }}
+                                {{ if ne $element.Params.article  $currentArticle}}
+                                    {{ $currentArticle = $element.Params.article }}
+                                    {{ $string = (print $string "Article " $currentArticle " - "   ) }}
+                                    <nav class="nav nav-pills flex-column">
+                                        <a class="nav-link ml-2" href="#c{{ $currentChapter }}-a{{ $currentArticle }}">article-{{ $currentArticle }}</a>
+                                {{ end }}
+                                {{ if ne $element.Params.division  $currentDivision}}
+                                    {{ $currentDivision = $element.Params.division }}
+                                    {{ $string = (print $string "Division " $currentDivision " - ") }}
+                                    <nav class="nav nav-pills flex-column">
+                                        <a class="nav-link ml-3" href="#c{{ $currentChapter }}-a{{ $currentArticle }}-d{{ $currentDivision }}">division-{{ $currentDivision }}</a>
+                                {{ end }}
+                                {{ if ne $element.Params.page  $currentPage}}
+                                    {{ $currentPage = $element.Params.page }}
+                                    {{ $string = (print $string "Page " $currentPage  )}}
+                                    <nav class="nav nav-pills flex-column">
+                                        <a class="nav-link ml-4"  href="#c{{ $currentChapter }}-a{{ $currentArticle }}-d{{ $currentDivision }}-p{{ $currentPage }}">page-{{ $currentPage }}</a>
+                                {{ end }}
+                            {{ end }}
+                        </nav>{{/* Close Page {{ $currentPage }} */}}
+                    </nav>{{/* Close Division {{ $currentDivision }} */}}
+                </nav>{{/* Close Article {{ $currentArticle }} */}}
+            </nav>{{/* Close Chapter {{ $currentChapter }} */}}
+        </nav>
+    </nav>
+</nav>

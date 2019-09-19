@@ -7,6 +7,9 @@ canonifyurls = true
 paginate = 3
 theme = "hugo-bootstrap"
 
+[params]
+  mainSections = ["comments"]
+
 disqusShortname = "xxxxxx"
 googleAnalytics = "UA-XXXXXXX-1"
 
@@ -45,3 +48,12 @@ googleAnalytics = "UA-XXXXXXX-1"
 #     identifier = "license"
 #     url = "/page/license/"
 #
+
+
+[taxonomies]
+  category = "categories"
+  chapter = "chapter"
+  article = "article"
+  division = "division"
+  page = "page"
+  tag = "tags"

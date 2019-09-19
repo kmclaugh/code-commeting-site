@@ -1,0 +1,59 @@
+{{ $firstItem := index . 0 }}
+{{ $currentPage := $firstItem.Params.page }}
+{{ $currentDivision := $firstItem.Params.division }}
+{{ $currentArticle:= $firstItem.Params.article }}
+{{ $currentChapter := $firstItem.Params.chapter }}
+
+    <div id="c{{ $currentChapter }}">
+        <div id="c{{ $currentChapter }}-a{{ $currentArticle }}">
+            <div id="c{{ $currentChapter }}-a{{ $currentArticle }}-d{{ $currentDivision }}">
+                <div id="c{{ $currentChapter }}-a{{ $currentArticle }}-d{{ $currentDivision }}-p{{ $currentPage }}">
+                    {{ range $index, $element := . }}
+
+                        {{/* Close section tags if necessary */}}
+                        {{ if ne $element.Params.page  $currentPage}}
+                            </div>
+                        {{ end }}
+                        {{ if ne $element.Params.division  $currentDivision}}
+                            </div>
+                        {{ end }}
+                        {{ if ne $element.Params.article  $currentArticle}}
+                            </div>
+                        {{ end }}
+                        {{ if ne $element.Params.chapter  $currentChapter}}
+                            </div>
+                        {{ end }}
+
+                        {{/* Create new sections and seperator */}}
+                        {{ $string := "" }}
+                        {{ if ne $element.Params.chapter  $currentChapter}}
+                            {{ $currentChapter = .Params.chapter }}
+                            {{ $string = (print "Chapter " $currentChapter " - "  ) }}
+                            <div id="c{{ $currentChapter }}">
+                        {{ end }}
+                        {{ if ne $element.Params.article  $currentArticle}}
+                            {{ $currentArticle = $element.Params.article }}
+                            {{ $string = (print $string "Article " $currentArticle " - "   ) }}
+                            <div id="c{{ $currentChapter }}-a{{ $currentArticle }}">
+                        {{ end }}
+                        {{ if ne $element.Params.division  $currentDivision}}
+                            {{ $currentDivision = $element.Params.division }}
+                            {{ $string = (print $string "Division " $currentDivision " - ") }}
+                            <div id="c{{ $currentChapter }}-a{{ $currentArticle }}-d{{ $currentDivision }}">
+                        {{ end }}
+                        {{ if ne $element.Params.page  $currentPage}}
+                            {{ $currentPage = $element.Params.page }}
+                            {{ $string = (print $string "Page " $currentPage  )}}
+                            <div id="c{{ $currentChapter }}-a{{ $currentArticle }}-d{{ $currentDivision }}-p{{ $currentPage }}">
+                            <hr id="{{ $currentChapter }}-{{ $currentArticle }}-{{ $currentDivision }}-{{ $currentPage }}" 
+                                class="hr-text" data-content="{{ $string }}">
+                        {{ end }}
+                        <div class="row justify-content-center">
+                        <!-- End Fixed Left Share -->
+                            {{ $element.Render "single.hat" }}
+                        </div>
+                    {{ end }}
+                </div>{{/* Close Page {{ $currentPage }} */}}
+            </div>{{/* Close Division {{ $currentDivision }} */}}
+        </div>{{/* Close Article {{ $currentArticle }} */}}
+    </div>{{/* Close Chapter {{ $currentChapter }} */}}

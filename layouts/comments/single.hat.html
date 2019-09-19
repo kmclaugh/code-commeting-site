@@ -1,5 +1,5 @@
 
-<div class="col-sm-12 col-md-8 ">
+<div class="col-sm-12 col-md-8 " style="margin-bottom: 30px;">
   <div class="card mx-0 post-card">
     <div class="row no-gutters">
 
@@ -31,9 +31,9 @@
           <p class="card-text">
               {{ if .IsPage }}
               {{ if .Description }}
-                {{ .Description | markdownify | truncate 140 }}
+                {{ .Description | markdownify }}
               {{ else }}
-                {{ .Summary | truncate 140}}
+                {{ .Summary}}
               {{ end }}
             {{ end }}
           </h4>

@@ -1,0 +1,14 @@
+{{ partial "head" . }}
+
+    <div id="main-content" class="container-fluid">
+        {{ $allSections := (where site.RegularPages "Type" "in" site.Params.mainSections) }}
+        <div class="row">
+            <div class='col-md-2'>
+                {{ partial "base/menu-section.html" $allSections }}
+            </div>
+            <div class="col-md-10">
+                {{ partial "base/comments-list.html" $allSections }}
+            </div>
+        </div>
+    </div>
+{{ partial "foot" . }}

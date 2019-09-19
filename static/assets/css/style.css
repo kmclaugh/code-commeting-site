@@ -31,7 +31,6 @@ body {
 /*Sticky footer*/
 .footer {
   position: absolute;
-  bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 60px;
@@ -281,4 +280,37 @@ blockquote p cite {
 
 blockquote p cite:before {
   content: "\2014 \2009";
+}
+
+.hr-text {
+  line-height: 1em;
+  position: relative;
+  outline: 0;
+  border: 0;
+  color: black;
+  text-align: center;
+  height: 1.5em;
+  opacity: 0.5;
+  margin-bottom: 30px;
+  margin-top: 0px;
+}
+.hr-text:before {
+  content: "";
+  background: linear-gradient(to right, transparent, #494946, transparent);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+}
+.hr-text:after {
+  content: attr(data-content);
+  position: relative;
+  display: inline-block;
+  color: black;
+
+  padding: 0 0.5em;
+  line-height: 1.5em;
+  color: #494946;
+  background-color: #f8f9fa;
 }

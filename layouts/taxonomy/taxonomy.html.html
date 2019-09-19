@@ -1,0 +1,13 @@
+{{ partial "head" . }}
+<div id="main-content" class="container-fluid">
+  <div class="row">
+      <div class='col-md-2'>
+          {{ partial "base/menu-section.html" .Data.Pages }}
+      </div>
+      <div class="col-md-10">
+          <h3 class="text-center" style="margin-bottom: 20px;">{{ .Title }}</h3>
+          {{ partial "base/comments-list.html" .Data.Pages }}
+      </div>
+  </div>
+</div>
+{{ partial "foot" . }}
