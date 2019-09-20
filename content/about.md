@@ -9,6 +9,8 @@ description = "How to submit and read comments."
 
 [This site](/) shows comments on Austin's 2019 land development code rewrite from AURA and friends. We collect these comments to submit to both staff and council.
 
+Here is the actual [code](/pdf/plain-code.pdf) which you can download or view in your browser.
+
 ### How it Works
 
 The [homepage](/) shows all comments organized by [chapter](/chapter), [article](/acticle), [division](<(/division)>), and [page](/page).

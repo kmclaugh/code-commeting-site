@@ -1,4 +1,4 @@
-{{ $firstItem := index ((.ByParam "index").ByParam "page") 0 }}
+{{ $firstItem := index ((.ByParam "indexNumber").ByParam "pageNumber") 0 }}
 {{ $currentPage := $firstItem.Params.page }}
 {{ $currentDivision := $firstItem.Params.division }}
 {{ $currentArticle:= $firstItem.Params.article }}
@@ -8,7 +8,7 @@
         <div id="c{{ $currentChapter }}-a{{ $currentArticle }}">
             <div id="c{{ $currentChapter }}-a{{ $currentArticle }}-d{{ $currentDivision }}">
                 <div id="c{{ $currentChapter }}-a{{ $currentArticle }}-d{{ $currentDivision }}-p{{ $currentPage }}">
-                    {{ range $index, $element := (.ByParam "index").ByParam "page" }}
+                    {{ range $index, $element := (.ByParam "indexNumber").ByParam "pageNumber"}}
 
                         {{/* Close section tags if necessary */}}
                         {{ if ne $element.Params.page  $currentPage}}
