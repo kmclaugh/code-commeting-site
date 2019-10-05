@@ -14,25 +14,39 @@ disqusShortname = "xxxxxx"
 googleAnalytics = "UA-XXXXXXX-1"
 
 [[menu.main]]
-    name = "TAGS"
+    name = "Tags"
     pre = "<i class='fa fa-tags'></i>"
     weight = -110
     identifier = "tags"
     url = "/tags/"
 
 [[menu.main]]
-    name = "CATEGORIES"
+    name = "Categories"
     pre = "<i class='fa fa-folder-open'></i>"
     weight = -100
     identifier = "categories"
     url = "/categories/"
 
 [[menu.main]]
-    name = "ABOUT ME"
+    name = "How To"
     pre = "<i class='fa fa-info-circle'></i>"
     weight = -90
     identifier = "about-me"
     url = "/about"
+
+[[menu.main]]
+    name = "Code Draft"
+    pre = "<i class='fa fa-info-circle'></i>"
+    weight = -90
+    identifier = "plain-code"
+    url = "/pdf/plain-code.pdf"
+
+[[menu.main]]
+    name = "Code Draft w Annotations"
+    pre = "<i class='fa fa-info-circle'></i>"
+    weight = -90
+    identifier = "annotatoted-code"
+    url = "/pdf/annotated-code.pdf"
 
 
 # You can have link at the footer as below
